@@ -1,0 +1,33 @@
+void process(const char *name, char *outstr) {
+    int t=0;
+    char type[100];
+    for (int k=0;k<strlen(name);k++)
+    {
+            if (((name[k]>='a') && (name[k]<='z')) || ((name[k]>='A') && (name[k]<='Z')) || (name[k]==' '))
+            {
+                type[t]=name[k];
+                t++;
+            }
+        }
+    int a=0;
+    int b=strlen(type);
+    while (type[a]==' ') a++;
+    while (type[b]==' ') b--;
+    int m=0;
+    for (int k=a;k<b;k++)
+    {
+        if ((type[k]==' ') && (type[k+1]==' ')) continue;
+        else
+        {
+            outstr[m]=type[k];
+            m++;
+        }
+    }
+    if ((outstr[0]>='a') && (outstr[0]<='z')) outstr[0]=toupper(outstr[0]);
+    for (int k=1;k<m;k++)
+    {
+        if ((outstr[k]>='a') && (outstr[k]<='z') && (outstr[k-1]==' ')) outstr[k]=toupper(outstr[k]);
+        else if ((outstr[k]>='A') && (outstr[k]<='Z') && (outstr[k-1]!=' ')) outstr[k]=tolower(outstr[k]);
+    }
+    outstr[m]='\0';
+}

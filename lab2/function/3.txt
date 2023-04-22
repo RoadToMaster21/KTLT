@@ -1,0 +1,6 @@
+int findMax(int *vals, int numEls) {
+    int fmax=vals[0];
+    for (int i=1;i<numEls;i++)
+        if (vals[i]>fmax) fmax=vals[i];
+    return fmax;
+}

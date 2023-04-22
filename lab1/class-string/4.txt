@@ -1,0 +1,16 @@
+void replaceString(string s, string s1, string s2){
+    string str=s;
+    int id=-1,c;
+    while (c!=-1)
+    {
+        c=str.find(s1);
+        if (c>id) id=c;
+        for (int i=0;i<=c;i++) if (str[i]!=' ') str[i]=' ';
+    }
+    if (id==-1) cout << s;
+    else {
+        s.erase(id,s1.length());
+        s.insert(id,s2);
+        cout << s;
+    }
+}

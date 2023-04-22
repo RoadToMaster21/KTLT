@@ -1,0 +1,17 @@
+void addAddendum(SCP &obj, string addendum) {
+    // Student answer
+  if(obj.addendums == NULL)
+  {
+     obj.addendums = new string[1]; 
+     obj.addendums[0] = addendum;
+  }
+  else
+  {
+    string a = obj.addendums[0]; 
+    obj.addendums = new string[2]; 
+    obj.addendums[0] = a;
+    obj.addendums[1] = addendum;
+    obj.numAddendums++;
+      
+  }
+}

@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()  {
+    string str;
+    cin >> str;
+    int i=0,dem=0,temp=1,c=0;
+    bool flag=true;
+    while (i<str.length())
+    {    
+        bool flag=true;
+        for (int j=c;j<i;j++)
+            if (str[i]==str[j]) 
+            {
+                flag=false;
+                c=j+1;
+                break;
+            }
+        if (flag)
+        {
+            dem++;
+            
+        } else {
+            i=c;
+            if (dem>temp) temp=dem;
+            dem=1;
+        }
+        if (dem>temp) temp=dem;
+        i++;
+    }
+
+    cout << temp;
+}

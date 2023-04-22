@@ -1,0 +1,44 @@
+class ClockType
+{
+   public:
+      ClockType(int, int, int); //constructor with parameters
+      ClockType(); //default constructor
+      
+      void printTime() const;
+
+   private:
+      int hr;
+      int min;
+      int sec;
+};
+
+void ClockType::printTime() const { 
+    if (hr < 10) 
+        cout << "0"; 
+    cout << hr << ":"; 
+    if (min < 10) 
+        cout << "0"; 
+    cout << min << ":"; 
+    if (sec < 10) 
+        cout << "0"; 
+    cout << sec;
+}
+
+//TODO
+ClockType::ClockType(int hours, int minutes, int seconds)
+{
+if (0 <= hours && hours < 24)
+    hr = hours;
+
+if (0 <= minutes && minutes < 60)
+    min = minutes;
+
+if (0 <= seconds && seconds < 60)
+    sec = seconds;
+}
+ClockType::ClockType()
+{
+    hr=0;
+    min=0;
+    sec=0;
+}

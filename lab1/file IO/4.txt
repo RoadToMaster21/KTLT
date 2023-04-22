@@ -1,0 +1,21 @@
+void process(string fileName)   {
+    fstream file;
+    file.open(fileName,ios::in);
+    float maxx=-1000000;
+    int n,m;
+    file >> n >> m;
+    for (int i=0;i<n;i++)
+    {
+        float maxline;
+        file >> maxline;
+        for (int j=0;j<m-1;j++)
+        {
+            float num;
+            file >> num;
+            if (num>maxline) maxline=num;
+        }
+        cout << maxline << " ";
+        if (maxline>maxx) maxx=maxline;
+    }
+    cout << maxx;
+}

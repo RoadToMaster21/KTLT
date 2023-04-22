@@ -1,0 +1,20 @@
+int gcdRecursion(int p, int q)
+{
+    // BEGIN YOUR IMPLEMENTATION [1]
+    if (p==0 && q==0) return 1;
+    if (q==0) return p;
+    if (p%q==0) return q;
+    return gcdRecursion(q,p%q);
+    // END YOUR EMPLEMENTATION [1]
+}
+int gcdIteration(int p, int q)
+{
+    // BEGIN YOUR IMPLEMENTATION [2]
+    if (p==0 && q==0) return 1;
+    while (p!=q)
+    {
+        if (p>q) p=p-q; else q=q-p;
+    }
+    return p;
+    // END YOUR EMPLEMENTATION [2]
+}

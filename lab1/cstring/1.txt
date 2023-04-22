@@ -1,0 +1,15 @@
+void process(char str[], char outstr[]) {
+    int i=0;
+    int j=strlen(str);
+    while (str[i]==' ') i++;
+    while (str[j]==' ') j--;
+    int t=0;
+    for (int k=i;k<=j;k++)
+    {
+        if ((str[k]==' ') && (str[k+1]==' ')) continue;
+        else {
+            outstr[t]=str[k];
+            t++;
+        }
+    }
+}

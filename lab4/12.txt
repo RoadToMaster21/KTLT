@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+
+//TODO
+class Coordinate
+{
+    private:
+        float x,y;
+    public:
+        Coordinate (float a, float b)
+        {
+            x = a;
+            y = b;
+        }
+        void setX(float n)
+        {
+            x = n;
+        }
+        void setY(float n)
+        {
+            y = n;
+        }
+        float getX()
+        {
+            return x;
+        }
+        float getY()
+        {
+            return y;
+        }
+        float distanceTo(Coordinate& b)
+        {
+            return abs(this->getX() - b.getX()) + abs(this->getY() - b.getY()); 
+        }
+};
+
+int main () {
+    float Xa, Xb, Ya, Yb;
+    cin >> Xa >> Xb >> Ya >> Yb;
+    Coordinate a(1,2);
+    Coordinate b(0,1);
+    cout << a.distanceTo(b) << endl;
+    a.setX(Xa); a.setY(Ya);
+    b.setX(Xb); b.setY(Yb);
+    cout << abs(a.getX() - b.getX()) + abs(a.getY() - b.getY()) << endl;
+    cout << a.distanceTo(b) << endl;
+    cout << abs(Xa - Xb) + abs(Ya - Yb);
+    return 0;
+}

@@ -1,0 +1,47 @@
+class ClockType
+{
+public:
+    ClockType();
+      
+    void setTime(int, int, int);
+    void printTime() const;
+
+private:
+    int hr;
+    int min;
+    int sec;
+};
+
+void ClockType::printTime() const
+{
+   if (hr < 10)
+      cout << "0";
+   cout << hr << ":";
+   if (min < 10)
+      cout << "0";
+   cout << min << ":";
+   if (sec < 10)
+      cout << "0";
+   cout << sec;
+}
+
+// TODO
+void ClockType::setTime(int a, int b, int c)
+{
+    if (0 <= a && a < 24)
+        hr = a;
+    else 
+        hr = 0;
+
+    if (0 <= b && b < 60)
+        min = b;
+    else 
+        min = 0;
+
+    if (0 <= c && c < 60)
+        sec = c;
+    else 
+        sec = 0;
+}
+
+

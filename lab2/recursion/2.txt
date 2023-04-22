@@ -1,0 +1,13 @@
+// Implement function content here
+    if (n<=0) return -1; 
+    if (arr[index]==m) 
+    {
+        for (int i=index;i<n-1;i++) arr[i]=arr[i+1];
+        n--;
+        return index;
+    }
+    else 
+    {
+        if (index==n-1) return -1;
+        return recursiveSearch(n,m,arr,index+1);
+    }

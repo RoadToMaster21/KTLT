@@ -1,0 +1,3 @@
+SCP createSCP(int id, int objClass, string speConProcedures, string description, string* addendums, int numAddendums) {
+    return SCP{id,objClass,speConProcedures,description,addendums,numAddendums};
+}
